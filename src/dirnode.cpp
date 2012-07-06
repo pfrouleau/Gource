@@ -828,7 +828,7 @@ vec2 RDirNode::calcFileDest(int max_files, int file_no) {
 void RDirNode::updateFilePositions() {
 
     int max_files = 1;
-    int diameter  = 1;
+    int diameter  = 0;
     int file_no   = 0;
     float d = 0.0;
 
@@ -852,7 +852,7 @@ void RDirNode::updateFilePositions() {
         file_no++;
 
         if(file_no>=max_files) {
-            diameter++;
+            diameter+=2;
             d += gGourceFileDiameter;
             max_files = (int) std::max(1.0, diameter*PI);
 
